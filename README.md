@@ -2,6 +2,17 @@
 
 >*吃不上猪肉，那就看猪跑!*
 
+## 阻塞项
+
+1. SDKM刷机失败，需尝试Ubuntu 18.04的SDKM
+尝试过方案
+Ubuntu 20.04 实体HOST和虚拟机都尝试了，也尝试了 https://forums.developer.nvidia.com/t/sdk-manager-fails-to-flash-orin-nx-8gb-nvme-on-orin-nano-developer-kit/256681/5
+>*sudo -s*
+>*echo -1 > /sys/module/usbcore/parameters/autosuspend*
+都不行，似乎只能
+https://forums.developer.nvidia.com/t/unable-to-flash-my-jetson-orin-nano-som-from-ubuntu-20-04-pc/253923
+
+
 
 ## 项目概述
 
