@@ -12,6 +12,7 @@ Ubuntu 20.04 实体HOST和虚拟机都尝试了，也尝试了 https://forums.de
 都不行，似乎只能
 https://forums.developer.nvidia.com/t/unable-to-flash-my-jetson-orin-nano-som-from-ubuntu-20-04-pc/253923
 
+还是不行，只能先用TF卡，直接刷images
 
 
 ## 项目概述
