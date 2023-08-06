@@ -4,30 +4,53 @@
 
 ## 阻塞项
 
-1. SDKM刷机失败，需尝试Ubuntu 18.04的SDKM
+1. SDKM刷机失败
+
+ERROR截图
+
+
+
+尝试Ubuntu 18.04的SDKM
 尝试过方案
 Ubuntu 20.04 实体HOST和虚拟机都尝试了，也尝试了 https://forums.developer.nvidia.com/t/sdk-manager-fails-to-flash-orin-nx-8gb-nvme-on-orin-nano-developer-kit/256681/5
 >*sudo -s*
+
 >*echo -1 > /sys/module/usbcore/parameters/autosuspend*
+
 都不行，似乎只能
+
 https://forums.developer.nvidia.com/t/unable-to-flash-my-jetson-orin-nano-som-from-ubuntu-20-04-pc/253923
 
 还是不行，只能先用TF卡，直接刷images
+
+修改了虚拟机的USB规格，从2.0->3.1 貌似还是不行
+
+看这个哥们换了固态就好了，买1T的SSD
+
+https://forums.developer.nvidia.com/t/flashing-orin-nano-failed-carveout-is-not-supported-and-other-errors/249907/20
 
 
 ## 项目概述
 
 基于Jetson Orin Nano的车载感知模块仿真项目。
 
-一、 基于ROS2，先跑通视频流到最终推理的链路。
+一、 基于JetPack 5.1.2跑通编译
 
-1. 相机驱动，罗技USB相机驱动，转发成ros topic
+1. 实现调用opencv等第三方库，跑通cmake编译
+
+2. 跑通cuda编程
+
+二、 基于ROS2，先跑通视频流到最终推理的链路。
+
+0. ROS2编译环境
+
+1. 相机驱动，罗技USB相机驱动，转发成ros2 topic
 
 2. 推理加后处理节点（包括推理+跟踪，可先不做跟踪，将推理结果透传出来）
 
 3. 可视化另做
 
-二、nano台架部署BEVFusion
+三、nano台架部署BEVFusion
 
 1. 部署BEVFusion demo
 
@@ -39,7 +62,7 @@ https://forums.developer.nvidia.com/t/unable-to-flash-my-jetson-orin-nano-som-fr
 
 5. nano作为台架，无真实传感器，跑通前融合台架仿真
 
-三、 感知模块
+四、 感知模块
 
 1. 前融合（视为单传感器）
 
